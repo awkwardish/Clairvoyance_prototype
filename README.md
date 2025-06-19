@@ -12,10 +12,10 @@ Visually impaired individuals often struggle to understand visual content shared
 
 To design an accessible web-based tool that:
 
-* Accepts image input from the user
-* Automatically generates descriptive captions using AI
-* Converts the captions into natural-sounding audio output
-* Offers multi-language and offline support for broader usability
+* Accepts image input from the user.
+* Automatically generates descriptive captions using AI.
+* Converts the captions into natural-sounding audio output.
+* Offers multi-language and offline support for broader usability.
 
 
 ## 💡 Key Features
@@ -71,8 +71,8 @@ Audio Output (MP3 playback)
 ### Run Locally
 
 ```bash
-git clone https://github.com/your-username/SeeForMe.git
-cd SeeForMe
+git clone https://github.com/awkwardish/Clairvoyance_prototype.git
+cd Clairvoyance_prototype
 python app.py
 ```
 
@@ -91,9 +91,9 @@ Visit [<link address>](#) in your browser.
 
 ## 📋 Datasets & Models Used
 
-* Pre-trained BLIP (Bootstrapped Language Image Pretraining) model from HuggingFace
-* Google Text-to-Speech (gTTS) for audio output
-* Google Translate API for multilingual support
+* Pre-trained BLIP (Bootstrapped Language Image Pretraining) model from HuggingFace.
+* Google Text-to-Speech (gTTS) for audio output.
+* Google Translate API for multilingual support.
 
 
 ## 📹 Demo Video
@@ -106,7 +106,8 @@ Demo video will be added soon...
 ```plaintext
 Clairvoyance/
 |...
-├── requirements.txt
+├── .gitignore
+├── requirements.txt (upload soon...)
 ├── README.md
 └── LICENSE
 ```
@@ -117,8 +118,8 @@ This project is licensed under the MIT License — see the LICENSE file for deta
 
 ## ✨ Acknowledgements
 
-* HuggingFace for open-source BLIP model
-* Google Cloud APIs
-* IGNITATHON 2025 organizing team
+* HuggingFace for open-source BLIP model.
+* Google Cloud APIs.
+* IGNITATHON 2025 organizing team.
 
 ---
