@@ -68,7 +68,7 @@ Audio Output (MP3 playback)
 
 * Python 3.10+
 
-* For production:
+<!-- * For production:
 
   ```bash
   pip install -r requirements.txt
@@ -77,7 +77,7 @@ Audio Output (MP3 playback)
 
   ```bash
   pip install -r dev-requirements.txt
-  ```
+  ``` -->
 
 
 ### Run Locally
@@ -88,17 +88,18 @@ cd Clairvoyance_prototype
 python app.py
 ```
 
-Visit [<link address>](#) in your browser.
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
+- For developers see `assets/get_started.md` for more details.
 
 
 ## 🏆 Team BitByBit
 
-| Name                   | Role                                              |
-| ---------------------- | ------------------------------------------------- |
-| 👸🏻 Anoushka Chaudhuri | Project Lead, Frontend Dev, Flask API Integration |
-| 👨🏻‍💻 Animesh Nandy      | AI Captioning + Flask API Integration             |
-| 👨🏻‍💻 Soumyajit Das      | gTTS Integration, Multilingual Support            |
-| 👩🏻‍💻 Srija Sarkar       | Research & Testing Compatibility of Components    |
+| Name                                                 | Role                                              |
+| -----------------------------------------------------|---------------------------------------------------|
+| 👸🏻 Anoushka Chaudhuri                                | Project Lead, Frontend Dev, Flask API Integration |
+| 👨🏻‍💻 [Animesh Nandy](https://github.com/ani-11-pro)    | AI Captioning + Flask API Integration             |
+| 👨🏻‍💻 [Soumyajit Das](https://github.com/soumyajiitdas/)| gTTS Integration, Multilingual Support            |
+| 👩🏻‍💻 [Srija Sarkar](https://github.com/srijasarkar133) | Research & Testing Compatibility of Components    |
 
 
 ## 🤖 AI Models Used
@@ -118,45 +119,26 @@ Demo video will be added soon...
 ```plaintext
 Clairvoyance/
 ├── backend/                         # FastAPI backend application
-|   ├── dev-requirements.txt         # for development purpose
-|   ├── requirements.txt             # for production purpose
+|   ├── requirements.txt             # For production purpose
 │   ├── app/
-│   │   ├── api/
-│   │   │   └── routes/                 # Route handlers
-│   │   │       ├── image_caption.py    # Endpoint: Image to caption (BLIP)
-│   │   │       ├── tts.py              # Endpoint: Text to speech
-│   │   │       ├── translate.py        # Endpoint: Text translation
-│   │   │       └── __init__.py
-│   │   ├── core/
-│   │   │   └── config.py            # Environment configuration
-│   │   ├── models/
-│   │   │   ├── blip_model.py           # BLIP model wrapper
-│   │   │   ├── tts_engine.py           # gTTS / pyttsx3 wrapper
-│   │   │   └── translate_engine.py     # Google Translate wrapper
-│   │   ├── utils/
-│   │   │   ├── image_utils.py       # Image preprocessing
-│   │   │   └── audio_utils.py       # (Optional) Audio processing
-│   │   ├── main.py                  # FastAPI app entry point
-│   │   └── requirements.txt         # Backend production dependencies
-│   ├── dev-requirements.txt         # Additional development tools
-│   └── Dockerfile                   # Container definition for backend
-│
+|   ├── main.py                      # main python file
+│       ├── api/
+│       └── routes/                     # Route handlers
+│               ├── image_caption.py    # Endpoint: Image to caption (BLIP)
+|    ...
 └── frontend/                   # Next.js frontend
-    ├── public/                 # Static files (favicon, etc.)
     ├── src/
     │   ├── components/
-    │   │   ├── ImageUpload.tsx         # Upload interface
-    │   │   ├── AudioPlayer.tsx         # Audio playback component
-    │   │   └── LanguageSelector.tsx    # Select translation language
+    │   │   ├── ImageUpload.js         # Upload interface
+    │   │   ├── Layout.js.js           # Application layout and styling
+    │   │   ...
     │   ├── pages/
-    │   │   ├── index.tsx             # Main UI
-    │   │   └── _app.tsx              # Global wrapper
+    │   │   ├── index.js              # Main UI
+    |   |   ├── _app.js               # Global wrapper
+    │   │   └── about.js              # For about section
     │   ├── styles/
-    │   │   └── globals.css             # Tailwind + accessibility styles
-    │   ├── utils/
-    │   │   └── api.ts                  # API calls to backend
-    │   └── types/
-    │       └── index.d.ts            # TypeScript interfaces
+    │       └── globals.css             # Tailwind + accessibility styles
+    |   ...
     ├── tailwind.config.js            # TailwindCSS config
     ├── package.json                  # Frontend dependencies
     └── next.config.js                # Next.js config
