@@ -1,15 +1,5 @@
-fastapi==0.111.0
-uvicorn[standard]==0.29.0
-transformers==4.41.1
-torch==2.3.0
-Pillow==10.3.0
-gTTS==2.5.1
-pyttsx3==2.90
-pydub==0.25.1
-ffmpeg-python==0.2.0
-googletrans==4.0.0-rc1
-python-multipart==0.0.9
-starlette==0.37.2
-fastapi-cors==0.1.1
-python-dotenv==1.0.1
-loguru==0.7.2
+# for backend setup
+fastapi==0.115.14
+python-dotenv==1.1.1
+python-multipart==0.0.20
+uvicorn==0.35.0
