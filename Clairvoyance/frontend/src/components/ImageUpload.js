@@ -21,7 +21,7 @@ export default function ImageUpload() {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:8000/caption", {
+      const response = await fetch("http://localhost:8000/caption-image", {
         method: "POST",
         body: formData,
       });
