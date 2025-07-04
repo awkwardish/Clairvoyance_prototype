@@ -20,14 +20,14 @@ To design an accessible web-based tool that:
 
 ## 💡 Key Features
 
-| Feature                     | Description                                                     |
-| --------------------------- | --------------------------------------------------------------- |
-| 🖼️ Image Upload             | Upload from local device (drag/drop or file picker)             |
-| 🧠 AI-Powered Captioning    | Uses pre-trained BLIP model for accurate image descriptions     |
-| 🔊 Audio Narration          | Converts caption text into speech using gTTS or pyttsx3         |
-| 🌐 Language Translation     | Optional feature for translating captions into native languages |
-| ♿ Accessibility-Friendly   | Designed with high contrast UI and keyboard navigation          |
-| 🛜 Optional Offline Support | Works with offline models and browser-based TTS (stretch goal)  |
+| Feature                     | Description                                                   |
+| --------------------------- | ------------------------------------------------------------- |
+| 🖼️ Image Upload             | Upload from local device (file picker)                        |
+| 🧠 AI-Powered Captioning    | Uses pre-trained BLIP model for accurate image descriptions   |
+| 🔊 Audio Narration          | Converts caption text into speech using gTTS                  |
+| 🌐 Language Translation     | Translate captions into native languages using translate api  |
+| ♿ Accessibility-Friendly   | Designed with responsive UI with dark mode support            |
+<!-- | 🛜 Optional Offline Support | Works with offline models and browser-based TTS (stretch goal)| -->
 
 
 ## 🏗️ System Architecture
@@ -56,57 +56,66 @@ Audio Output (MP3 playback)
 | Frontend  | Next.js, Tailwind CSS                   |
 | Backend   | Python (FastAPI)                        |
 | AI Model  | BLIP (via HuggingFace Transformers)     |
-| TTS       | gTTS (Google Text-to-Speech), pyttsx3   |
-| Hosting   | Vercel (Frontend) + Railway (API)       |
+| TTS       | gTTS (Google Text-to-Speech)            |
 | Translate | Google Translate API                    |
-| Database  | PostgreSQL or SQLite (optional)         |
+<!-- | Database  | PostgreSQL or SQLite (optional)         |
+| Hosting   | Vercel (Frontend) + Railway (API)       | -->
 
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Backend Setup
 
-* Python 3.10+
+  - install python 3.10+
+  - clone the repository
+  - navigate to `./Clairvoyance/backend` in terminal
+  - create a py virtual environment and active it
+  - run to install all required packages :
 
-<!-- * For production:
-
-  ```bash
+  ```
   pip install -r requirements.txt
   ```
-* For development:
 
-  ```bash
-  pip install -r dev-requirements.txt
-  ``` -->
+  - to start the backend run
+  
+  ```
+  uvicorn main:app
+  ```
 
+### Frontend Setup
+  - navigate to `frontend` folder in terminal
+  - run to install all required packages :
 
-### Run Locally
+  ```
+  npm install
+  ```  
 
-```bash
-git clone https://github.com/awkwardish/Clairvoyance_prototype.git
-cd Clairvoyance_prototype
-python app.py
-```
+ - to start the frontend
+  
+  ```
+  npm run dev
+  ```
 
 Visit [http://localhost:3000](http://localhost:3000) in your browser.
-- For developers see `assets/get_started.md` for more details.
+- see `assets/get_started.md` for more details.
 
 
 ## 🏆 Team BitByBit
 
-| Name                                                 | Role                                              |
-| -----------------------------------------------------|---------------------------------------------------|
-| 👸🏻 Anoushka Chaudhuri                                | Project Lead, Frontend Dev, Flask API Integration |
-| 👨🏻‍💻 [Animesh Nandy](https://github.com/ani-11-pro)    | AI Captioning + Flask API Integration             |
-| 👨🏻‍💻 [Soumyajit Das](https://github.com/soumyajiitdas/)| gTTS Integration, Multilingual Support            |
-| 👩🏻‍💻 [Srija Sarkar](https://github.com/srijasarkar133) | Research & Testing Compatibility of Components    |
+| Name                                                   |Role                                            |
+| -------------------------------------------------------|------------------------------------------------|
+| 👸🏻 [Anoushka Chaudhuri](https://github.com/awkwardish)| Project Lead, gTTS Integration                 |
+| 👨🏻‍💻 [Soumyajit Das](https://github.com/soumyajiitdas/) | Frontend Dev, Flask API Integration            |
+| 👩🏻‍💻 [Srija Sarkar](https://github.com/srijasarkar133)  | Multilingual Support, UI updates               |
+| 👨🏻‍💻 [Animesh Nandy](https://github.com/ani-11-pro)     | Research & Testing Compatibility of Components |
 
 
-## 🤖 AI Models Used
+
+<!-- ## 🤖 AI Models Used
 
 * Pre-trained BLIP (Bootstrapped Language Image Pretraining) model from HuggingFace
 * Google Text-to-Speech (gTTS) for audio output
-* Google Translate API for multilingual support
+* Google Translate API for multilingual support -->
 
 
 ## 📹 Demo Video
@@ -114,42 +123,9 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser.
 Demo video will be added soon...
 
 
-## 🗂️ Project Structure
-
-```plaintext
-Clairvoyance/
-├── backend/                         # FastAPI backend application
-|   ├── requirements.txt             # For production purpose
-│   ├── app/
-|   ├── main.py                      # main python file
-│       ├── api/
-│       └── routes/                     # Route handlers
-│               ├── image_caption.py    # Endpoint: Image to caption (BLIP)
-|    ...
-└── frontend/                   # Next.js frontend
-    ├── src/
-    │   ├── components/
-    │   │   ├── ImageUpload.js         # Upload interface
-    │   │   ├── Layout.js.js           # Application layout and styling
-    │   │   ...
-    │   ├── pages/
-    │   │   ├── index.js              # Main UI
-    |   |   ├── _app.js               # Global wrapper
-    │   │   └── about.js              # For about section
-    │   ├── styles/
-    │       └── globals.css             # Tailwind + accessibility styles
-    |   ...
-    ├── tailwind.config.js            # TailwindCSS config
-    ├── package.json                  # Frontend dependencies
-    └── next.config.js                # Next.js config
-├── .gitignore
-├── README.md
-└── LICENSE
-```
-
 ## 📑 License
 
-This project is licensed under the MIT License — see the LICENSE file for details.
+This project is licensed under the MIT License — see the [`LICENSE`](./LICENSE) file for details.
 
 ## ✨ Acknowledgements
 

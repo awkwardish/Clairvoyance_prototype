@@ -58,28 +58,25 @@ uvicorn main:app --reload
 |-------------|-----------------------------------|
 | `main`      | Production-ready stable code      |
 | `dev`       | Active development branch         |
-| `ui-update` | UI changes (@Anoushka, @Srija)    |
 
 
-## ✅ Suggested Workflow for UI Developer
+## ✅ Suggested Workflow for Developers
 
-1. Checkout to your UI branch:
+1. Checkout to your dev branch
    ```bash
-   git checkout ui-update   # switch to ui-update branch
+   git checkout dev      # switch to dev branch
    ```
 
 2. Pull latest changes:
    ```bash
-   git pull origin dev    # download latest changes
+   git pull origin main    # download latest changes
    ```
 
-3. Make UI edits inside `frontend/src/components/`
-
-4. Commit and push:
+3. Commit and push:
    ```bash
    git add .
    git commit -m "your commit message"
-   git push origin ui-update    # upload to ui-update branch
+   git push origin dev     # upload to dev branch
    ```
 
 <h2 align=center> Happy Coding❣️!! </h2>

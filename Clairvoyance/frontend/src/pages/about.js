@@ -4,28 +4,28 @@ const developers = [
     github: "awkwardish",
     linkedin: "https://www.linkedin.com/in/anoushkachaudhuri/",
     email: "jaimahadevshambhu@gmail.com",
-    role: "Project Lead, Frontend Developer, UI Designer",
+    role: "Project Lead, gTTS Integration, UI Design",
   },
   {
     name: "Soumyajit Das",
     github: "soumyajiitdas",
     linkedin: "https://linkedin.com/in/soumyajit4119",
     email: "soumyajit302@gmail.com",
-    role: "gTTS Integration, Multilingual Support",
-  },
-  {
-    name: "Animesh Nandy",
-    github: "ani-11-pro",
-    linkedin: "https://linkedin.com/in/animeshnandy",    // could't find his linkedin profile !!
-    email: "animesh.nandy.04@gmail.com",
-    role: "AI Captioning + FastAPI Integration",
+    role: "Frontend Dev, Flask API Integration, UI Design",
   },
   {
     name: "Srija Sarkar",
     github: "srijasarkar133",
     linkedin: "https://www.linkedin.com/in/srija-sarkar-210383350/",
     email: "srijasarkar133@gmail.com",
-    role: "Research & Component Testing, Debugging",
+    role: "Multilingual Support, gTTS Integration",
+  },
+  {
+    name: "Animesh Nandy",
+    github: "ani-11-pro",
+    linkedin: "#",                                           // could't find his linkedin profile !!
+    email: "animesh.nandy.04@gmail.com",
+    role: "Research & Testing Compatibility of Components",
   },
 ];
 
@@ -106,7 +106,7 @@ export default function About() {
       </section>
 
       <div className="mt-12 text-center text-lg italic text-gray-600 dark:text-gray-400">
-        Built with love, code, and a mission to make vision audible 💙
+        Built with love, code, and a mission to make vision audible ❤️
       </div>
     </div>
   );
