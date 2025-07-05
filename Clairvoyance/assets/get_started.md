@@ -7,8 +7,7 @@ Welcome! This guide explains how to get the Clairvoyance project up and running 
 ```
 clairvoyance/
 ├── backend/         # FastAPI backend
-├── frontend/        # Next.js + Tailwind frontend
-└── README.md
+└── frontend/        # Next.js + Tailwind frontend
 ```
 
 ## 🔧 Setup Instructions
@@ -16,8 +15,8 @@ clairvoyance/
 ### ▶️ Clone the Repository
 
 ```
-git clone https://github.com/your-username/clairvoyance.git
-cd clairvoyance
+git clone https://github.com/awkwardish/Clairvoyance_prototype.git
+cd Clairvoyance_prototype/Clairvoyance
 ```
 
 ## 🌐 Frontend Setup (Next.js + Tailwind)
@@ -42,9 +41,10 @@ npm run dev
 ## 🧪 Backend Setup (FastAPI)
 
 ```
+cd..            # if you are in frontend folder
 cd backend
 python -m venv venv
-.\venv\Scripts\Activate         # (Windows)
+.\venv\Scripts\Activate           # for Windows
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
@@ -62,21 +62,25 @@ uvicorn main:app --reload
 
 ## ✅ Suggested Workflow for Developers
 
-1. Checkout to your dev branch
+> To upload your code, create a new branch, don't push it directly to main or dev branch...
+
+1. Create a new beanch and switch
    ```bash
-   git checkout dev      # switch to dev branch
+   git checkout -b branch_name
    ```
 
 2. Pull latest changes:
    ```bash
-   git pull origin main    # download latest changes
+   git pull origin main     # download latest changes
    ```
 
 3. Commit and push:
    ```bash
    git add .
    git commit -m "your commit message"
-   git push origin dev     # upload to dev branch
+   git push origin branch_name           # upload to your new branch
    ```
 
-<h2 align=center> Happy Coding❣️!! </h2>
+<p align="center"><strong>Happy Coding ❣️ !!</strong></p>
+
+---
