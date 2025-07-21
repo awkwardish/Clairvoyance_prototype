@@ -2,6 +2,7 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import JSONResponse
 from services.blip_caption import generate_caption
+from api.routes import speak_caption 
 
 app = FastAPI(title="Clairvoyance - Image to Voice API")
 
@@ -12,6 +13,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(speak_caption.router)
 
 @app.post("/caption-image")
 async def caption_image(file: UploadFile = File(...)):
