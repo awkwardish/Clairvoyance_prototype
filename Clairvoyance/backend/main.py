@@ -1,7 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import JSONResponse
-from image_captioning import generate_caption
+from services.blip_caption import generate_caption
 
 app = FastAPI(title="Clairvoyance - Image to Voice API")
 
