@@ -30,27 +30,32 @@ useEffect(() => {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
       <nav className="flex items-center justify-between px-6 py-4 shadow bg-white dark:bg-gray-800">
-        <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">
-          Clairvoyance
-        </h1>
+        <div className="flex items-center gap-2">
+          <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+            &lt; Clairvoyance /&gt;
+          </h1>
+          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full dark:bg-blue-200 dark:text-blue-800">
+            Beta
+          </span>
+        </div>
         <div className="space-x-4">
           <Link
             href="/"
             className={`hover:underline ${router.pathname === "/" ? "font-semibold" : ""}`}
           >
-            Home
+            Home 🏠
           </Link>
           <Link
             href="/about"
             className={`hover:underline ${router.pathname === "/about" ? "font-semibold" : ""}`}
           >
-            About
+            About 💭
           </Link>
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="ml-4 px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
           >
-            {darkMode ? "Light Mode" : "Dark Mode"}
+            {darkMode ? "🔆 Light Mode" : "🌛 Dark Mode"}
           </button>
         </div>
       </nav>
