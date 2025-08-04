@@ -8,24 +8,24 @@ import { useRouter } from "next/router";
 export default function Layout({ children }) {
   const router = useRouter();
   const [darkMode, setDarkMode] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-useEffect(() => {
-  const stored = localStorage.getItem("dark-mode");
-  if (stored === "true") {
-    setDarkMode(true);
-  }
-}, []);
+  useEffect(() => {
+    const stored = localStorage.getItem("dark-mode");
+    if (stored === "true") {
+      setDarkMode(true);
+    }
+  }, []);
 
-useEffect(() => {
-  if (darkMode) {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("dark-mode", "true");
-  } else {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("dark-mode", "false");
-  }
-}, [darkMode]);
-
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("dark-mode", "true");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("dark-mode", "false");
+    }
+  }, [darkMode]);
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
@@ -38,16 +38,20 @@ useEffect(() => {
             Beta
           </span>
         </div>
-        <div className="space-x-4">
+        <div className="hidden md:flex items-center space-x-4">
           <Link
             href="/"
-            className={`hover:underline ${router.pathname === "/" ? "font-semibold" : ""}`}
+            className={`hover:underline ${
+              router.pathname === "/" ? "font-semibold" : ""
+            }`}
           >
             Home 🏠
           </Link>
           <Link
             href="/about"
-            className={`hover:underline ${router.pathname === "/about" ? "font-semibold" : ""}`}
+            className={`hover:underline ${
+              router.pathname === "/about" ? "font-semibold" : ""
+            }`}
           >
             About 💭
           </Link>
@@ -58,7 +62,44 @@ useEffect(() => {
             {darkMode ? "🔆 Light Mode" : "🌛 Dark Mode"}
           </button>
         </div>
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </nav>
+      {isMenuOpen && (
+        <div className="md:hidden bg-white dark:bg-gray-800">
+          <Link href="/" className="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700" onClick={() => setIsMenuOpen(false)}>
+            Home 🏠
+          </Link>
+          <Link href="/about" className="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700" onClick={() => setIsMenuOpen(false)}>
+            About 💭
+          </Link>
+          <button
+            onClick={() => {
+              setDarkMode(!darkMode);
+              setIsMenuOpen(false);
+            }}
+            className="w-full text-left block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700"
+          >
+            {darkMode ? "🔆 Light Mode" : "🌛 Dark Mode"}
+          </button>
+        </div>
+      )}
 
       <main className="py-10 px-6">{children}</main>
     </div>
