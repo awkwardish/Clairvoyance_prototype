@@ -4,28 +4,28 @@ const developers = [
     github: "awkwardish",
     linkedin: "https://www.linkedin.com/in/anoushkachaudhuri/",
     email: "jaimahadevshambhu@gmail.com",
-    role: "Project Lead, gTTS Integration, UI Design",
+    role: "Project Lead, UI design, Text-to-speech integration, Research.",
   },
   {
     name: "Soumyajit Das",
     github: "soumyajiitdas",
     linkedin: "https://linkedin.com/in/soumyajit4119",
     email: "soumyajit302@gmail.com",
-    role: "Frontend Dev, Flask API Integration, UI Design",
+    role: "Frontend dev, UI design, Backend integration, Multilingual support.",
   },
   {
     name: "Srija Sarkar",
     github: "srijasarkar133",
     linkedin: "https://www.linkedin.com/in/srija-sarkar-210383350/",
     email: "srijasarkar133@gmail.com",
-    role: "Multilingual Support, gTTS Integration",
+    role: "Text-to-speech and translation integration, Testing.",
   },
   {
     name: "Animesh Nandy",
     github: "ani-11-pro",
     linkedin: "https://www.linkedin.com/in/animesh-nandy-34b0a1373/",
     email: "animesh.nandy.04@gmail.com",
-    role: "Research & Testing Compatibility of Components",
+    role: "Research and testing compatibility of components.",
   },
 ];
 
@@ -33,11 +33,11 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto animate-fadeIn">
-        <h1 className="text-5xl font-extrabold text-center mb-6 text-gray-900 dark:text-white">
-          : About Clairvoyance :
+        <h1 className="text-5xl font-extrabold text-center mb-6 text-gray-900 dark:text-blue-500">
+          About Clairvoyance 📢
         </h1>
         <p className="text-xl text-center mb-12 text-gray-600 font-style: italic dark:text-gray-300">
-          The team and vision behind your AI companion...
+          "📑 The team and vision behind your AI companion..."
         </p>
 
         <div className="space-y-12">

@@ -63,11 +63,11 @@ export default function ImageUpload() {
 
   return (
     <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 max-w-4xl mx-auto mt-10">
-      <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-4">
-        Upload an Image
+      <h2 className="text-3xl font-bold text-center text-blue-700 dark:text-white mb-3">
+        Upload an Image :
       </h2>
       <p className="text-center text-gray-600 font-style: italic dark:text-gray-300 mb-6">
-        Reading may not be for everyone, but hearing is...
+        "📚 Reading may not be for everyone, but hearing is..."
       </p>
 
       {/* Two-column layout */}
@@ -113,7 +113,7 @@ export default function ImageUpload() {
             disabled={loading || !image}
             className={`w-full mt-2 py-3 px-4 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 ${
               loading || !image
-                ? "bg-gray-600 cursor-not-allowed"
+                ? "bg-gray-400 cursor-not-allowed dark:bg-gray-600"
                 : "bg-blue-600 hover:bg-blue-700"
             }`}
           >

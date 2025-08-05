@@ -32,34 +32,35 @@ export default function Layout({ children }) {
       <nav className="flex items-center justify-between px-6 py-4 shadow bg-white dark:bg-gray-800">
         <div className="flex items-center gap-2">
           <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">
-            &lt; Clairvoyance /&gt;
+            &lt;Clairvoyance/&gt;
           </h1>
           <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full dark:bg-blue-200 dark:text-blue-800">
-            Beta
+            beta
           </span>
         </div>
         <div className="hidden md:flex items-center space-x-4">
           <Link
             href="/"
-            className={`hover:underline ${
+            className={`hover:text-blue-600 ${
               router.pathname === "/" ? "font-semibold" : ""
             }`}
           >
-            Home 🏠
+            🏠 Home
           </Link>
           <Link
             href="/about"
-            className={`hover:underline ${
+            className={`hover:text-blue-600 ${
               router.pathname === "/about" ? "font-semibold" : ""
             }`}
           >
-            About 💭
+            💭 About
           </Link>
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="ml-4 px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+            className="ml-4 px-3 py-1 bg-gray-200 hover:bg-blue-200 dark:bg-gray-700 rounded-full dark:hover:bg-blue-600"
+
           >
-            {darkMode ? "🔆 Light Mode" : "🌛 Dark Mode"}
+            {darkMode ? "🔆 Dark " : "🌛 Light "}
           </button>
         </div>
         <div className="md:hidden">
@@ -82,21 +83,21 @@ export default function Layout({ children }) {
         </div>
       </nav>
       {isMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-800">
-          <Link href="/" className="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700" onClick={() => setIsMenuOpen(false)}>
-            Home 🏠
+        <div className="md:hidden py-2 bg-white text-center dark:bg-gray-800">
+          <Link href="/" className="py-2 px-4 text-sm bg-blue-100 rounded-full hover:bg-blue-400 dark:hover:bg-blue-900 dark:bg-blue-700" onClick={() => setIsMenuOpen(false)}>
+            🏠 Home
           </Link>
-          <Link href="/about" className="block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700" onClick={() => setIsMenuOpen(false)}>
-            About 💭
+          <Link href="/about" className="py-2 px-4 text-sm bg-blue-100 rounded-full hover:bg-blue-400 dark:hover:bg-blue-500 dark:hover:bg-blue-900 dark:bg-blue-700" onClick={() => setIsMenuOpen(false)}>
+            💭 About
           </Link>
           <button
             onClick={() => {
               setDarkMode(!darkMode);
               setIsMenuOpen(false);
             }}
-            className="w-full text-left block py-2 px-4 text-sm hover:bg-gray-200 dark:hover:bg-gray-700"
+            className="py-2 px-4 text-sm bg-blue-100 rounded-full hover:bg-blue-400 dark:hover:bg-blue-500 dark:hover:bg-blue-900 dark:bg-blue-700"
           >
-            {darkMode ? "🔆 Light Mode" : "🌛 Dark Mode"}
+            {darkMode ? "🔆 Light" : "🌛 Dark"}
           </button>
         </div>
       )}
