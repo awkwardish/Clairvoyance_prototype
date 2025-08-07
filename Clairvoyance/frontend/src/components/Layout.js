@@ -8,52 +8,102 @@ import { useRouter } from "next/router";
 export default function Layout({ children }) {
   const router = useRouter();
   const [darkMode, setDarkMode] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-useEffect(() => {
-  const stored = localStorage.getItem("dark-mode");
-  if (stored === "true") {
-    setDarkMode(true);
-  }
-}, []);
+  useEffect(() => {
+    const stored = localStorage.getItem("dark-mode");
+    if (stored === "true") {
+      setDarkMode(true);
+    }
+  }, []);
 
-useEffect(() => {
-  if (darkMode) {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("dark-mode", "true");
-  } else {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("dark-mode", "false");
-  }
-}, [darkMode]);
-
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("dark-mode", "true");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("dark-mode", "false");
+    }
+  }, [darkMode]);
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
       <nav className="flex items-center justify-between px-6 py-4 shadow bg-white dark:bg-gray-800">
-        <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">
-          Clairvoyance
-        </h1>
-        <div className="space-x-4">
+        <div className="flex items-center gap-2">
+          <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">
+            &lt;Clairvoyance/&gt;
+          </h1>
+          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full dark:bg-blue-200 dark:text-blue-800">
+            beta
+          </span>
+        </div>
+        <div className="hidden md:flex items-center space-x-4">
           <Link
             href="/"
-            className={`hover:underline ${router.pathname === "/" ? "font-semibold" : ""}`}
+            className={`hover:text-blue-600 ${
+              router.pathname === "/" ? "font-semibold" : ""
+            }`}
           >
-            Home
+            🏠 Home
           </Link>
           <Link
             href="/about"
-            className={`hover:underline ${router.pathname === "/about" ? "font-semibold" : ""}`}
+            className={`hover:text-blue-600 ${
+              router.pathname === "/about" ? "font-semibold" : ""
+            }`}
           >
-            About
+            💭 About
           </Link>
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="ml-4 px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded"
+            className="ml-4 px-3 py-1 bg-gray-200 hover:bg-blue-200 dark:bg-gray-700 rounded-full dark:hover:bg-blue-600"
+
           >
-            {darkMode ? "Light Mode" : "Dark Mode"}
+            {darkMode ? "🔆 Dark " : "🌛 Light "}
+          </button>
+        </div>
+        <div className="md:hidden flex gap-2">
+          <button
+            onClick={() => {
+              setDarkMode(!darkMode);
+              setIsMenuOpen(false);
+            }}
+            className="py-1 px-3 text-sm bg-blue-500 rounded-lg dark:bg-blue-700"
+          >
+            {darkMode ? "🔆" : "🌛"}
+          </button>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
           </button>
         </div>
       </nav>
+      {isMenuOpen && (
+        <div className="md:hidden bg-white text-center font-semibold dark:bg-gray-800">
+        <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
+          <Link href="/" className="block py-2 text-sm" onClick={() => setIsMenuOpen(false)}>
+            🏠 Home
+          </Link>
+          <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
+          <Link href="/about" className="block py-2 text-sm" onClick={() => setIsMenuOpen(false)}>
+            💭 About
+          </Link>
+          <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
+        </div>
+      )}
 
       <main className="py-10 px-6">{children}</main>
     </div>

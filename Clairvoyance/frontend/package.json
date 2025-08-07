@@ -1,7 +1,12 @@
 {
   "name": "clairvoyance-frontend",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awkwardish/Clairvoyance_prototype"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

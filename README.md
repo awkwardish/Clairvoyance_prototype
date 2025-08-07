@@ -58,8 +58,7 @@ Audio Output (MP3 playback)
 | AI Model  | BLIP (via HuggingFace Transformers)     |
 | TTS       | gTTS (Google Text-to-Speech)            |
 | Translate | Google Translate API                    |
-<!-- | Database  | PostgreSQL or SQLite (optional)         |
-| Hosting   | Vercel (Frontend) + Railway (API)       | -->
+<!--| Hosting   | Render (frontend + backend)       | -->
 
 
 ## 🚀 Getting Started
@@ -96,18 +95,17 @@ Audio Output (MP3 playback)
   npm run dev
   ```
 
-Visit [http://localhost:3000](http://localhost:3000) in your browser.
-- see `assets/get_started.md` for more details.
+Visit [`http://localhost:3000`](http://localhost:3000) in your browser. **Clairvoyance** is live now and fully functional.
 
 
 ## 🏆 Team BitByBit
 
-| Name                                                   |Role                                            |
-| -------------------------------------------------------|------------------------------------------------|
-| 👸🏻 [Anoushka Chaudhuri](https://github.com/awkwardish)| Project Lead, gTTS Integration                 |
-| 👨🏻‍💻 [Soumyajit Das](https://github.com/soumyajiitdas/) | Frontend Dev, Flask API Integration            |
-| 👩🏻‍💻 [Srija Sarkar](https://github.com/srijasarkar133)  | Multilingual Support, UI updates               |
-| 👨🏻‍💻 [Animesh Nandy](https://github.com/ani-11-pro)     | Research & Testing Compatibility of Components |
+| Name                                                   |Role                                                               |
+| -------------------------------------------------------|-------------------------------------------------------------------|
+| 👸🏻 [Anoushka Chaudhuri](https://github.com/awkwardish)| Project Lead, UI design, Text-to-speech integration, Research.     |
+| 👨🏻‍💻 [Soumyajit Das](https://github.com/soumyajiitdas/) | Frontend dev, UI design, Backend integration, Multilingual support.|
+| 👩🏻‍💻 [Srija Sarkar](https://github.com/srijasarkar133)  | Text-to-speech and translation integration, Testing.               |
+| 👨🏻‍💻 [Animesh Nandy](https://github.com/ani-11-pro)     | Research and testing compatibility of components.                  |
 
 
 
@@ -118,9 +116,13 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser.
 * Google Translate API for multilingual support -->
 
 
-## 📹 Demo Video
+## 🎥 Project Demo
 
-Demo video will be added soon...
+### User Interface Showcase :
+<a href="assets/ui_showcase.mp4" target="_blank">
+  <img src="assets/preview.png" alt="User Interface Showcase" style="width: 80%; max-width: 600px; border-radius: 8px;" />
+</a>
+
 
 
 ## 📑 License
@@ -132,5 +134,8 @@ This project is licensed under the MIT License — see the [`LICENSE`](./LICENSE
 * HuggingFace for open-source BLIP model
 * Google Cloud APIs
 * IGNITATHON 2025 organizing team
+
+---
+<p align=center><strong>Built with love, code, and a mission to make vision audible ❤️</strong></p>
 
 ---
