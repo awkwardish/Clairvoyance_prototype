@@ -63,7 +63,16 @@ export default function Layout({ children }) {
             {darkMode ? "🔆 Dark " : "🌛 Light "}
           </button>
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden flex gap-2">
+          <button
+            onClick={() => {
+              setDarkMode(!darkMode);
+              setIsMenuOpen(false);
+            }}
+            className="py-1 px-3 text-sm bg-blue-500 rounded-lg dark:bg-blue-700"
+          >
+            {darkMode ? "🔆" : "🌛"}
+          </button>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <svg
               className="w-6 h-6"
@@ -83,22 +92,16 @@ export default function Layout({ children }) {
         </div>
       </nav>
       {isMenuOpen && (
-        <div className="md:hidden py-2 bg-white text-center dark:bg-gray-800">
-          <Link href="/" className="py-2 px-4 text-sm bg-blue-100 rounded-full hover:bg-blue-400 dark:hover:bg-blue-900 dark:bg-blue-700" onClick={() => setIsMenuOpen(false)}>
+        <div className="md:hidden bg-white text-center font-semibold dark:bg-gray-800">
+        <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
+          <Link href="/" className="block py-2 text-sm" onClick={() => setIsMenuOpen(false)}>
             🏠 Home
           </Link>
-          <Link href="/about" className="py-2 px-4 text-sm bg-blue-100 rounded-full hover:bg-blue-400 dark:hover:bg-blue-500 dark:hover:bg-blue-900 dark:bg-blue-700" onClick={() => setIsMenuOpen(false)}>
+          <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
+          <Link href="/about" className="block py-2 text-sm" onClick={() => setIsMenuOpen(false)}>
             💭 About
           </Link>
-          <button
-            onClick={() => {
-              setDarkMode(!darkMode);
-              setIsMenuOpen(false);
-            }}
-            className="py-2 px-4 text-sm bg-blue-100 rounded-full hover:bg-blue-400 dark:hover:bg-blue-500 dark:hover:bg-blue-900 dark:bg-blue-700"
-          >
-            {darkMode ? "🔆 Light" : "🌛 Dark"}
-          </button>
+          <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
         </div>
       )}
 
